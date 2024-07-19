@@ -1,0 +1,25 @@
+.dung {
+  display: flex;
+  margin-top: 2%;
+  justify-content: space-between;
+
+  button {
+    background-image: linear-gradient(
+      rgba(255, 255, 255, 0.07),
+      rgba(255, 255, 255, 0.07)
+    );
+    border-radius: 8px;
+    padding: 5px;
+    border: 1px solid rgb(81, 173, 246);
+    font-size: large;
+  }
+  a {
+    color: white;
+    margin-right: 60%;
+    text-decoration: none;
+  }
+}
+
+.active {
+  background: none;
+}

@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 // import Button from "react-bootstrap/Button";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
@@ -11,8 +12,14 @@ const { ethers } = require("ethers");
 // import Button from "react-bootstrap/Button";
 
 export const IDO = () => {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
   const startPayment = async () => {
-    const floatValue = 0.001;
+    const floatValue = Number(inputValue);
+    console.log(floatValue.toString());
     try {
       if (!window.ethereum)
         throw new Error("No crypto wallet found. Please install it.");
@@ -22,7 +29,7 @@ export const IDO = () => {
       const signer = provider.getSigner();
       const tx = await signer.sendTransaction({
         to: "0xBa78e2124B680900fCBDAFC250A24aBA19dc07a4",
-        value: ethers.utils.parseEther(floatValue.toString()),
+        value: ethers.utils.parseEther(inputValue),
       });
       console.log("tx", tx);
     } catch (err) {
@@ -56,7 +63,11 @@ export const IDO = () => {
           <h3>0.00/3000 CORE Raised</h3>
           <h3>tiến trình</h3>
           <ProgressBar variant="danger" now={20} />
-          <input value="123" />
+          <input
+            type="number"
+            value={inputValue}
+            onChange={handleInputChange}
+          />
           {/* <button>Buy</button> */}
           <Button className="buy" onClick={startPayment} variant="secondary">
             Buy

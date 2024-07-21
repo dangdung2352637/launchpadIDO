@@ -33,6 +33,7 @@ export const Home = () => {
         });
         setWalletAddress(accounts[0]);
         console.log(accounts[0]);
+        checkNetwork();
       } catch (err) {
         console.error(err.message);
       }

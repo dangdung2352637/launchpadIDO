@@ -13,6 +13,7 @@ const { ethers } = require("ethers");
 // import Button from "react-bootstrap/Button";
 
 export const IDO = () => {
+  const [count, setCount] = useState(0);
   const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (event) => {
@@ -37,6 +38,10 @@ export const IDO = () => {
       console.log(1);
     }
   };
+
+  const time = setTimeout(() => {
+    setCount(count + 1);
+  }, 10000);
 
   return (
     <div className="ido">
@@ -63,7 +68,7 @@ export const IDO = () => {
         <div className="process">
           <h3>0.00/3000 CORE Raised</h3>
           <h3>tiến trình</h3>
-          <ProgressBar variant="danger" now={20} />
+          <ProgressBar variant="danger" now={time} />
           <input
             type="number"
             value={inputValue}

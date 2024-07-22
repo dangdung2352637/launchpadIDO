@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CountdownTimer from "../components/countdow";
 // import Button from "react-bootstrap/Button";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
@@ -57,7 +58,7 @@ export const IDO = () => {
         <h3>Sale Type: Private Sale</h3>
         <div className="time-end">
           <h3>Sale Ends in:</h3>
-          <h3>Time</h3>
+          <CountdownTimer />
         </div>
         <div className="process">
           <h3>0.00/3000 CORE Raised</h3>

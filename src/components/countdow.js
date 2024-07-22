@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 const CountdownTimer = () => {
-  const targetDate = new Date("August 22, 2024 07:00:00").getTime();
+  const initialTargetDate = new Date("July 30, 2025 16:30:00").getTime();
+  const [targetDate, setTargetDate] = useState(initialTargetDate);
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [is24HourCycle, setIs24HourCycle] = useState(false);
 
   function calculateTimeLeft() {
     const difference = targetDate - new Date().getTime();
@@ -20,30 +22,40 @@ const CountdownTimer = () => {
   }
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
+    const timer = setInterval(() => {
+      const newTimeLeft = calculateTimeLeft();
+      setTimeLeft(newTimeLeft);
+
+      if (!newTimeLeft) {
+        if (!is24HourCycle) {
+          setIs24HourCycle(true);
+          setTargetDate(new Date().getTime() + 24 * 60 * 60 * 1000);
+        } else {
+          setIs24HourCycle(false);
+          setTargetDate(new Date().getTime() + 24 * 60 * 60 * 1000);
+        }
+      }
     }, 1000);
 
-    return () => clearTimeout(timer);
-  });
+    return () => clearInterval(timer);
+  }, [targetDate, is24HourCycle]);
 
   const formatTime = (time) => {
     return time.toString().padStart(2, "0");
   };
-  // console.log(timeLeft);
-  // console.log(targetDate);
+
+  const getTimerDisplay = () => {
+    if (!timeLeft) return "00:00:00:00";
+    const { days, hours, minutes, seconds } = timeLeft;
+    return `${formatTime(days)}:${formatTime(hours)}:${formatTime(
+      minutes
+    )}:${formatTime(seconds)}`;
+  };
 
   return (
     <div className="text-center p-4 bg-blue-100 rounded-lg shadow-md">
-      {timeLeft ? (
-        <div className="text-3xl font-mono">
-          {`${formatTime(timeLeft.days)}:${formatTime(
-            timeLeft.hours
-          )}:${formatTime(timeLeft.minutes)}:${formatTime(timeLeft.seconds)}`}
-        </div>
-      ) : (
-        <span>Thời gian đã đến!</span>
-      )}
+      <h2 className="text-2xl font-bold mb-4">{is24HourCycle ? "" : ""}</h2>
+      <div className="text-3xl font-mono">{getTimerDisplay()}</div>
     </div>
   );
 };

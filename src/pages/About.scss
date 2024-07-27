@@ -1,3 +1,49 @@
-.About{
-    color: white;
+.About {
+  margin-top: 10%;
+  color: white;
+  .About-1 {
+    display: flex;
+    justify-content: space-between;
+    .About-1-content {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h1 {
+        font-size: 60px;
+      }
+      h3 {
+        margin-top: 3%;
+      }
+      .About-1-button {
+        button {
+          margin-top: 3%;
+          border-radius: 8px;
+          background-color: blue;
+          color: white;
+          margin-right: 8%;
+        }
+      }
+    }
+  }
+
+  .About-2 {
+    margin-top: 10%;
+    display: flex;
+    align-content: space-between;
+    font-size: 20px;
+    .About-2-1 {
+      color: white;
+      background-color: blue;
+      height: 200px;
+      text-align: center;
+    }
+    .About-2-2 {
+      color: white;
+      background-color: rgb(39, 88, 128);
+      height: 200px;
+      text-align: center;
+    }
+  }
 }

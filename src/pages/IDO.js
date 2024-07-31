@@ -1,16 +1,13 @@
 import React, { useState } from "react";
+import { GetBlance } from "../redux/GetBalance";
 import CountdownTimer from "../components/countdow";
-// import Button from "react-bootstrap/Button";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
-// import Form from "react-bootstrap/Form";
-// import InputGroup from "react-bootstrap/InputGroup";
 import "./IDO.scss";
 import banner8 from "../image/banner8.png";
 import imgsocial1 from "../image/imgsocial1.png";
-// import React, { useState, useEffect } from "react";
+
 const { ethers } = require("ethers");
-// import Button from "react-bootstrap/Button";
 
 export const IDO = () => {
   const [count, setCount] = useState(0);
@@ -60,33 +57,44 @@ export const IDO = () => {
         </h3>
       </div>
       <div className="ido-page">
-        <h3>Sale Type: Private Sale</h3>
+        {/* <h3>Sale Type: Private Sale</h3> */}
         <div className="time-end">
-          <h3>Sale Ends in:</h3>
+          <h3>Presale Ends In</h3>
           <CountdownTimer />
         </div>
         <div className="process">
-          <h3>0.00/3000 CORE Raised</h3>
-          <h3>tiến trình</h3>
-          <ProgressBar variant="danger" now={time} />
+          <ProgressBar variant="success" now={time} />
+          <div className="process-1">
+            <h6>0 BNB</h6>
+            <h6>10.00 BNB</h6>
+          </div>
+          <p>
+            <GetBlance />
+          </p>
           <input
             type="number"
             value={inputValue}
             onChange={handleInputChange}
           />
-          {/* <button>Buy</button> */}
           <Button className="buy" onClick={startPayment} variant="secondary">
             Buy
           </Button>
         </div>
-        {/* <button className="button-view"></button> */}
-        <Button className="button-view" variant="secondary">
-          View All Contributors
-        </Button>
         <Button className="button-claim" variant="secondary">
           CLAIM
         </Button>
-        {/* <button></button> */}
+        <div className="Sale-Type">
+          <h6>Sale Type</h6>
+          <h6>Public</h6>
+        </div>
+        <div className="Current-Rate">
+          <h6>Current Rate</h6>
+          <h6>1 BNB = 333.914 NDG</h6>
+        </div>
+        <div className="Current-Raised">
+          <h6>Current Raised</h6>
+          <h6>10 BNB (100%)</h6>
+        </div>
       </div>
 
       <div></div>

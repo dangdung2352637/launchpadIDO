@@ -17,19 +17,19 @@ export const Home = () => {
     <div className="dung">
       <NavLink>
         <Link to="/">Home</Link>
-        <Link to="/About">About</Link>
+        <Link to="/About">Staking</Link>
         <Link to="/IDO">IDO</Link>
       </NavLink>
 
-      <button>
+      <button className="buttonConnect">
         {isConnected ? (
           <>
-            <p>
+            <button>
               {walletAddress.substring(0, 6)}...{walletAddress.substring(38)}
-            </p>
+            </button>
           </>
         ) : (
-          <button onClick={connectWallet}>Kết nối ví</button>
+          <button onClick={connectWallet}>Connect Wallet</button>
         )}
       </button>
     </div>

@@ -4,8 +4,8 @@ import CountdownTimer from "../components/countdow";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
 import "./IDO.scss";
-import banner8 from "../image/banner8.png";
 import imgsocial1 from "../image/imgsocial1.png";
+import baoidoo from "../image/baoidoo.png";
 
 const { ethers } = require("ethers");
 
@@ -43,17 +43,17 @@ export const IDO = () => {
   return (
     <div className="ido">
       <div className="ido-detal">
-        <img src={banner8}></img>
+        <img src={baoidoo}></img>
         <div className="ido-img">
           <img className="crx" src={imgsocial1}></img>
-          <h2>CRX</h2>
+          <h2>NEP</h2>
         </div>
         <h3 className="text">
-          Chúng tôi vui mừng thông báo mở vòng bán hàng riêng tư. Các tiện ích
-          của mã thông báo $CRX rất rộng lớn và liên tục mở rộng, vì COREx là
-          một nền tảng luôn hướng tới tương lai, không ngừng phát triển và giới
-          thiệu các tính năng mới. Mặc dù luôn có điều gì đó mới mẻ sắp xảy ra,
-          nhưng đây là những lợi ích chính hiện tại mà $CRX mang lại
+          Leopad is a multichain venture DAO and IDO launchpad with the mission
+          to incubate, fund, and launch the DeFi of tomorrow ,We offer our
+          community attractive opportunities to get in early with well-vetted
+          projects on our platform, and offer our partners a new way to grow
+          their community footprints.
         </h3>
       </div>
       <div className="ido-page">
@@ -89,7 +89,7 @@ export const IDO = () => {
         </div>
         <div className="Current-Rate">
           <h6>Current Rate</h6>
-          <h6>1 BNB = 333.914 NDG</h6>
+          <h6>1 BNB = 333.914 NEP</h6>
         </div>
         <div className="Current-Raised">
           <h6>Current Raised</h6>

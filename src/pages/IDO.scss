@@ -16,8 +16,10 @@
       background-image: none;
     }
     img {
+      aspect-ratio: 16/5;
       width: 100%;
-      border-radius: 15px;
+      height: auto;
+      border-radius: 20px;
     }
     .ido-img {
       display: flex;
@@ -49,6 +51,9 @@
       background-image: none;
       margin-top: 5%;
       margin-bottom: -5%;
+      h3 {
+        width: 100%;
+      }
       .text-center {
         margin-top: -18%;
       }

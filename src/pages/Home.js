@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Home.scss";
 import { useSimpleWallet } from "../redux/useSimpleWallet";
+import Create from "./Create";
 
 export const Home = () => {
   const {
@@ -17,7 +18,7 @@ export const Home = () => {
     <div className="dung">
       <NavLink>
         <Link to="/">Home</Link>
-        <Link to="/About">Staking</Link>
+        <Link to="/Create">Create</Link>
         <Link to="/IDO">IDO</Link>
       </NavLink>
 

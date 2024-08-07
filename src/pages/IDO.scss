@@ -1,3 +1,6 @@
+.ido-one {
+  color: white;
+}
 .ido {
   color: white;
   display: flex;
@@ -36,7 +39,7 @@
     }
   }
   .ido-page {
-    margin-right: -10%;
+    // margin-right: -10%;
     width: 30%;
     display: flex;
     flex-direction: column;
@@ -118,6 +121,23 @@
       padding: 5px;
       border: 1px;
       font-size: large;
+    }
+  }
+}
+
+.chart {
+  margin-top: 10%;
+  display: flex;
+  justify-content: space-between;
+  .chart-tokendetail {
+    width: 60%;
+    .token-detail {
+      // width: 60%;
+      .token-detail-1 {
+        margin-top: 1%;
+        display: flex;
+        justify-content: space-between;
+      }
     }
   }
 }

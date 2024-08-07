@@ -30,17 +30,37 @@ export const About = () => {
       </div>
 
       <div className="About-2">
-        <div>
-          <p className="About-2-1">
-            All actions are fully guaranteed by WEB 3.0 smart contracts,
-            eliminating human intervention and ensuring security.
-          </p>
-        </div>
-        <div>
-          <p className="About-2-2">
-            Simplifying investment through technologies and innovative products
-            that promote Web3 adoption
-          </p>
+        <h1>ROADMAP</h1>
+        <div className="elementor-container">
+          <div className="elementor-container-deploy">
+            <div>PHASE 1</div>
+            <ul>
+              <li>Deploy Contract</li>
+              <li>Launch Telegram</li>
+              <li>Launch X</li>
+              <li>Launch Website</li>
+              <li>Marketing Campaign</li>
+              <li>$10M Marketcap</li>
+            </ul>
+          </div>
+          <div className="elementor-container-coinMarketCap">
+            <div>PHASE 2</div>
+            <ul>
+              <li>CoinMarketCap Listing</li>
+              <li>CoinGecko Listing</li>
+              <li>Marketing Campaign</li>
+              <li>Certik Audit</li>
+              <li>$100M Marketcap</li>
+            </ul>
+          </div>
+          <div className="elementor-container-more">
+            <div>PHASE 3</div>
+            <ul>
+              <li>More CEX Listings</li>
+              <li>Marketing Campaign</li>
+              <li>$500M Marketcap</li>
+            </ul>
+          </div>
         </div>
       </div>
 

@@ -54,7 +54,9 @@ const CountdownTimer = () => {
 
   return (
     <div className="text-center p-4 bg-blue-100 rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-4">{is24HourCycle ? "" : ""}</h2>
+      <h2 className="text-2xl font-bold mb-4">
+        {is24HourCycle ? " Presale Ends In" : "Presale Start In"}
+      </h2>
       <div className="text-3xl font-mono">{getTimerDisplay()}</div>
     </div>
   );

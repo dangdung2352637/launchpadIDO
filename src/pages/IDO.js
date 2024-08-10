@@ -8,6 +8,7 @@ import imgsocial1 from "../image/imgsocial1.png";
 import baoidoo from "../image/baoidoo.png";
 import PieChart from "../components/PieChart";
 import { useSelector } from "react-redux";
+import WalletBalanceComponent from "../redux/getBalanceIdo";
 // import React, { useState, useEffect } from "react";
 
 const { ethers } = require("ethers");
@@ -19,7 +20,7 @@ export const IDO = () => {
   const specificWalletBalance = useSelector(
     (state) => state.wallet.specificWalletBalance
   );
-  const prosessIDO = (Number(specificWalletBalance) / 0.01) * 100;
+  const prosessIDO = (Number(specificWalletBalance) / 0.001) * 100;
   console.log("spec", specificWalletBalance);
   console.log("hello", prosessIDO);
 
@@ -71,6 +72,7 @@ export const IDO = () => {
           </div>
           <div className="process">
             <ProgressBar variant="success" now={prosessIDO} />
+            <WalletBalanceComponent />
             <div className="process-1">
               <h6>0 BNB</h6>
               <h6>10.00 BNB</h6>

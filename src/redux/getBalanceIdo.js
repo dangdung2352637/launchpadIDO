@@ -5,28 +5,27 @@ function WalletBalanceComponent() {
   const { updateSpecificWalletBalance, specificWalletBalance } =
     useSimpleWallet();
   const walletAddress = "0xBa78e2124B680900fCBDAFC250A24aBA19dc07a4";
-  const prosessIDO = (Number(specificWalletBalance) / 0.1) * 100;
-  console.log(prosessIDO);
+  const [prosessIDO, setProsessIDO] = useState(0);
 
   useEffect(() => {
-    if (walletAddress) {
+    // Cập nhật ngay lập tức khi component mount
+    updateSpecificWalletBalance(walletAddress);
+
+    // Thiết lập interval để cập nhật định kỳ
+    const intervalId = setInterval(() => {
       updateSpecificWalletBalance(walletAddress);
+    }, 3000);
 
-      // Cập nhật số dư mỗi 30 giây
-      const intervalId = setInterval(() => {
-        updateSpecificWalletBalance(walletAddress);
-      }, 3000);
+    // Dọn dẹp interval khi component unmount
+    return () => clearInterval(intervalId);
+  }, []); // Mảng dependencies rỗng để chỉ chạy một lần khi mount
 
-      // Dọn dẹp interval khi component unmount hoặc walletAddress thay đổi
-      return () => clearInterval(intervalId);
-    }
-  }, [walletAddress, updateSpecificWalletBalance]);
+  useEffect(() => {
+    // Cập nhật prosessIDO mỗi khi specificWalletBalance thay đổi
+    // setProsessIDO((Number(specificWalletBalance) / 0.001) * 100);
+  }, []);
 
-  return (
-    <div>
-      <p>Specific Wallet Balance: {prosessIDO} BNB</p>
-    </div>
-  );
+  return <div></div>;
 }
 
 export default WalletBalanceComponent;

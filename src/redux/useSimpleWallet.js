@@ -7,13 +7,18 @@ import {
   setBalance,
   setNetworkId,
   resetWallet,
+  setSpecificWalletBalance,
 } from "./walletSlice";
 
 export function useSimpleWallet() {
   const dispatch = useDispatch();
-  const { walletAddress, isConnected, balance, networkId } = useSelector(
-    (state) => state.wallet
-  );
+  const {
+    walletAddress,
+    isConnected,
+    balance,
+    networkId,
+    specificWalletBalance,
+  } = useSelector((state) => state.wallet);
 
   const web3 = useMemo(() => new Web3(window.ethereum), []);
 
@@ -77,6 +82,56 @@ export function useSimpleWallet() {
     dispatch(resetWallet());
   }, [dispatch]);
 
+  const getSpecificWalletBalance = useCallback(
+    async (address) => {
+      try {
+        const balanceWei = await web3.eth.getBalance(address);
+        const balanceBNB = web3.utils.fromWei(balanceWei, "ether");
+        dispatch(setSpecificWalletBalance(balanceBNB));
+        return balanceBNB;
+      } catch (error) {
+        console.error("Error fetching specific wallet balance:", error);
+        return null;
+      }
+    },
+    [web3.eth, web3.utils, dispatch]
+  );
+
+  const updateSpecificWalletBalance = useCallback(
+    async (address) => {
+      if (address) {
+        try {
+          const balanceWei = await web3.eth.getBalance(address);
+          const balanceBNB = web3.utils.fromWei(balanceWei, "ether");
+          dispatch(setSpecificWalletBalance(balanceBNB));
+        } catch (error) {
+          console.error("Error updating specific wallet balance:", error);
+        }
+      }
+    },
+    [web3.eth, web3.utils, dispatch]
+  );
+
+  useEffect(() => {
+    const initializeWallet = async () => {
+      if (typeof window.ethereum !== "undefined") {
+        try {
+          const accounts = await web3.eth.getAccounts();
+          if (accounts.length > 0) {
+            dispatch(setWalletAddress(accounts[0]));
+            dispatch(setIsConnected(true));
+            await getBalance(accounts[0]);
+          }
+          await checkAndSwitchNetwork();
+        } catch (error) {
+          console.error("Error initializing wallet:", error);
+        }
+      }
+    };
+
+    initializeWallet();
+  }, []); // Mảng dependencies rỗng để đảm bảo chỉ chạy một lần khi component mount
+
   useEffect(() => {
     if (typeof window.ethereum !== "undefined") {
       window.ethereum.on("accountsChanged", async (accounts) => {
@@ -123,5 +178,8 @@ export function useSimpleWallet() {
     disconnectWallet,
     getBalance,
     checkAndSwitchNetwork,
+    specificWalletBalance,
+    getSpecificWalletBalance,
+    updateSpecificWalletBalance,
   };
 }

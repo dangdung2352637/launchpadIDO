@@ -1,10 +1,20 @@
 import "./Create.scss";
+import WalletBalanceComponent from "../redux/getBalanceIdo";
+import React from "react";
+import { useSelector } from "react-redux";
 
 export const Create = () => {
+  const specificWalletBalance = useSelector(
+    (state) => state.wallet.specificWalletBalance
+  );
+  console.log("day", specificWalletBalance);
   return (
     <div className="Create">
       <div>
-        <h1 className="project-details">Project Details</h1>
+        <WalletBalanceComponent />
+        <h1 className="project-details">
+          Project Details {specificWalletBalance}
+        </h1>
         <div>Project name</div>
         <input />
         <div>Tagline</div>

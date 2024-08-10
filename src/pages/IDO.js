@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { GetBlance } from "../redux/GetBalance";
+import { GetBlance } from "../redux/getBalance";
 import CountdownTimer from "../components/countdow";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
@@ -7,12 +7,21 @@ import "./IDO.scss";
 import imgsocial1 from "../image/imgsocial1.png";
 import baoidoo from "../image/baoidoo.png";
 import PieChart from "../components/PieChart";
+import { useSelector } from "react-redux";
+// import React, { useState, useEffect } from "react";
 
 const { ethers } = require("ethers");
 
 export const IDO = () => {
   const [count, setCount] = useState(0);
   const [inputValue, setInputValue] = useState("");
+
+  const specificWalletBalance = useSelector(
+    (state) => state.wallet.specificWalletBalance
+  );
+  const prosessIDO = (Number(specificWalletBalance) / 0.01) * 100;
+  console.log("spec", specificWalletBalance);
+  console.log("hello", prosessIDO);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -36,10 +45,6 @@ export const IDO = () => {
       console.log(1);
     }
   };
-
-  const time = setTimeout(() => {
-    setCount(count + 1);
-  }, 10000);
 
   return (
     <div className="ido-one">
@@ -65,7 +70,7 @@ export const IDO = () => {
             <CountdownTimer />
           </div>
           <div className="process">
-            <ProgressBar variant="success" now={time} />
+            <ProgressBar variant="success" now={prosessIDO} />
             <div className="process-1">
               <h6>0 BNB</h6>
               <h6>10.00 BNB</h6>

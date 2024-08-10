@@ -5,6 +5,7 @@ const initialState = {
   isConnected: false,
   balance: "0",
   networkId: null,
+  specificWalletBalance: "0",
 };
 
 export const walletSlice = createSlice({
@@ -26,6 +27,9 @@ export const walletSlice = createSlice({
     resetWallet: (state) => {
       Object.assign(state, initialState);
     },
+    setSpecificWalletBalance: (state, action) => {
+      state.specificWalletBalance = action.payload;
+    },
   },
 });
 
@@ -35,6 +39,7 @@ export const {
   setBalance,
   setNetworkId,
   resetWallet,
+  setSpecificWalletBalance,
 } = walletSlice.actions;
 
 export const walletReducer = walletSlice.reducer;

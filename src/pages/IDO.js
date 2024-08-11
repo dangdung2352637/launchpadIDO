@@ -9,43 +9,16 @@ import baoidoo from "../image/baoidoo.png";
 import PieChart from "../components/PieChart";
 import { useSelector } from "react-redux";
 import WalletBalanceComponent from "../redux/getBalanceIdo";
+import CountdownTimerButton from "../components/coundowButton";
 // import React, { useState, useEffect } from "react";
-
-const { ethers } = require("ethers");
 
 export const IDO = () => {
   const [count, setCount] = useState(0);
-  const [inputValue, setInputValue] = useState("");
 
   const specificWalletBalance = useSelector(
     (state) => state.wallet.specificWalletBalance
   );
   const prosessIDO = (Number(specificWalletBalance) / 0.001) * 100;
-  console.log("spec", specificWalletBalance);
-  console.log("hello", prosessIDO);
-
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
-  const startPayment = async () => {
-    const floatValue = Number(inputValue);
-    console.log(floatValue.toString());
-    try {
-      if (!window.ethereum)
-        throw new Error("No crypto wallet found. Please install it.");
-
-      await window.ethereum.send("eth_requestAccounts");
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const signer = provider.getSigner();
-      const tx = await signer.sendTransaction({
-        to: "0xBa78e2124B680900fCBDAFC250A24aBA19dc07a4",
-        value: ethers.utils.parseEther(inputValue),
-      });
-      console.log("tx", tx);
-    } catch (err) {
-      console.log(1);
-    }
-  };
 
   return (
     <div className="ido-one">
@@ -80,14 +53,7 @@ export const IDO = () => {
             <p>
               <GetBlance />
             </p>
-            <input
-              type="number"
-              value={inputValue}
-              onChange={handleInputChange}
-            />
-            <Button className="buy" onClick={startPayment} variant="secondary">
-              Buy
-            </Button>
+            <CountdownTimerButton />
           </div>
           <Button className="button-claim" variant="secondary">
             CLAIM

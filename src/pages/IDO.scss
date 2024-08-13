@@ -1,3 +1,35 @@
+@media all and (max-width: 900px) {
+  .ido {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 1200px !important;
+    .ido-detal {
+      width: 100% !important;
+    }
+    .ido-page {
+      width: 100% !important;
+      margin-top: 10%;
+    }
+  }
+  .chart {
+    margin-top: 30% !important;
+    display: flex;
+    flex-direction: column;
+    .chart-tokendetail {
+      width: 100% !important;
+      margin-bottom: 15%;
+      h6 {
+        font-size: 1rem;
+      }
+    }
+
+    .chart-ido {
+      width: 100% !important;
+    }
+  }
+}
+
 .ido-one {
   color: white;
 }
@@ -93,7 +125,8 @@
 
     .Sale-Type,
     .Current-Rate,
-    .Current-Raised {
+    .Current-Raised,
+    .Current-Listing {
       margin-top: 5%;
       display: flex;
       justify-content: space-between;

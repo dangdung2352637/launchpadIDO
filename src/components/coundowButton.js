@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import "./coundowButton.scss";
 const { ethers } = require("ethers");
 
 const CountdownTimer = () => {
-  const initialTargetDate = new Date("August 11, 2024 23:35:00").getTime();
+  const initialTargetDate = new Date("August 12, 2024 00:25:00").getTime();
   const [targetDate, setTargetDate] = useState(initialTargetDate);
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const [isCountdownFinished, setIsCountdownFinished] = useState(false);
@@ -80,22 +81,21 @@ const CountdownTimer = () => {
   };
 
   return (
-    <div className="text-center p-4 bg-blue-100 rounded-lg shadow-md">
-      <input type="number" value={inputValue} onChange={handleInputChange} />
+    <div className="">
+      <input
+        className="input"
+        type="number"
+        value={inputValue}
+        onChange={handleInputChange}
+      />
 
       {isCountdownFinished && timeLeft ? (
-        <button
-          onClick={startPayment}
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-        >
-          Nhấn vào đây
+        <button onClick={startPayment} className="start-in">
+          Nhấn vào
         </button>
       ) : (
-        <button
-          onClick={handleButtonClick}
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-        >
-          đây rồi
+        <button onClick={handleButtonClick} className="start-end">
+          Buy
         </button>
       )}
     </div>

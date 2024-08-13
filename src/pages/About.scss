@@ -1,3 +1,82 @@
+@media all and (max-width: 980px) {
+  .About {
+    margin-top: 10%;
+    color: white;
+    .About-1 {
+      display: flex;
+      flex-direction: column;
+      .About-1-content {
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+      }
+      img {
+        margin-top: 8%;
+        width: 100% !important;
+        height: 100% !important;
+      }
+    }
+    .About-2 {
+      animation: 3.5s ease-out 0s 1 slideInFromRight;
+
+      .elementor-container {
+        display: flex;
+        flex-direction: column;
+        .elementor-container-deploy,
+        .elementor-container-coinMarketCap,
+        .elementor-container-more {
+          div {
+            text-align: center;
+          }
+          margin-top: 5%;
+          width: 100% !important;
+        }
+      }
+    }
+
+    .About-2dad {
+      display: flex;
+      flex-direction: column;
+      animation: slideIn 4.5s ease-out forwards;
+      .About-2B {
+        width: 100% !important;
+        margin-top: 6% !important;
+      }
+    }
+
+    .About-3 {
+      .About-3-1 {
+        display: flex;
+        flex-direction: column;
+        h3 {
+          text-align: left !important;
+          margin-top: -8%;
+          margin-bottom: 15%;
+        }
+      }
+      .About-3-2 {
+        margin-top: 2% !important;
+        display: flex;
+        flex-direction: column;
+        h3 {
+          text-align: left !important;
+          margin-top: -8%;
+          margin-bottom: 15%;
+        }
+      }
+    }
+
+    .About-4 {
+      display: flex;
+      flex-direction: column;
+      height: 860px !important;
+      div {
+        width: 60% !important;
+      }
+    }
+  }
+}
+
 @keyframes slideIn {
   from {
     transform: translateX(-100%);
@@ -52,6 +131,10 @@
           margin-right: 8%;
         }
       }
+    }
+    img {
+      width: 40%;
+      height: 38%;
     }
   }
 

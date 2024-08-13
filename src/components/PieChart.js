@@ -6,11 +6,18 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const PieChart = () => {
   const data = {
-    labels: ["CEX listing", "Earn ", "Marketing", "Presale", "Team", "Burn"],
+    labels: [
+      "CEX listing 15%",
+      "Earn 50%",
+      "Marketing 10%",
+      "Presale 10%",
+      "Team 5% ",
+      "Airdrop 10%",
+    ],
     datasets: [
       {
         label: "# of Votes",
-        data: [8, 16, 4, 4, 2, 2],
+        data: [54, 180, 36, 36, 18, 36],
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",

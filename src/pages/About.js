@@ -26,7 +26,7 @@ export const About = () => {
             <button>Get a 15% bonus</button>
           </div>
         </div>
-        <img width="500" height="600" src={bao} />
+        <img src={bao} />
       </div>
 
       <div className="About-2">

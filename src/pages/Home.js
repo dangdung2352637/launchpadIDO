@@ -15,9 +15,11 @@ export const Home = () => {
   } = useSimpleWallet();
 
   return (
-    <div className="dung">
-      <NavLink>
-        <Link to="/">Home</Link>
+    <div className="Nav-link">
+      <NavLink className="nav-link-page">
+        <Link className="home-page" to="/">
+          Home
+        </Link>
         <Link to="/Create">Create</Link>
         <Link to="/IDO">IDO</Link>
       </NavLink>
@@ -25,12 +27,14 @@ export const Home = () => {
       <button className="buttonConnect">
         {isConnected ? (
           <>
-            <button>
+            <button className="buttonConnect-one">
               {walletAddress.substring(0, 6)}...{walletAddress.substring(38)}
             </button>
           </>
         ) : (
-          <button onClick={connectWallet}>Connect Wallet</button>
+          <button className="buttonConnect-two" onClick={connectWallet}>
+            Connect Wallet
+          </button>
         )}
       </button>
     </div>

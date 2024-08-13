@@ -47,8 +47,8 @@ export const IDO = () => {
             <ProgressBar variant="success" now={prosessIDO} />
             <WalletBalanceComponent />
             <div className="process-1">
-              <h6>0 BNB</h6>
-              <h6>10.00 BNB</h6>
+              <h6>0 ETH</h6>
+              <h6>10.00 ETH</h6>
             </div>
             <p>
               <GetBlance />
@@ -64,11 +64,15 @@ export const IDO = () => {
           </div>
           <div className="Current-Rate">
             <h6>Current Rate</h6>
-            <h6>1 BNB = 333.914 NEP</h6>
+            <h6>1 ETH = 10.000.000 NEP</h6>
+          </div>
+          <div className="Current-Listing">
+            <h6>Listing </h6>
+            <h6>1 ETH = 2.800.000 NEP</h6>
           </div>
           <div className="Current-Raised">
             <h6>Current Raised</h6>
-            <h6>10 BNB (100%)</h6>
+            <h6>10.00 ETH (100%)</h6>
           </div>
         </div>
       </div>
@@ -76,43 +80,48 @@ export const IDO = () => {
         <div className="chart-tokendetail">
           <div className="token-detail">
             <div className="token-detail-1">
-              <div>Address</div>
-              <div>287345923</div>
+              <h6>Address</h6>
+              <h6>287345923</h6>
             </div>
             <hr color="white"></hr>
             <div className="token-detail-1">
-              <div>Name</div>
-              <div>Leopad Coin</div>
+              <h6>Name</h6>
+              <h6>Leopad Coin</h6>
             </div>
             <hr color="white"></hr>
             <div className="token-detail-1">
-              <div>Symbol</div>
-              <div>NEP</div>
+              <h6>Symbol</h6>
+              <h6>NEP</h6>
             </div>
             <hr color="white"></hr>
             <div className="token-detail-1">
-              <div>Total Supply</div>
-              <div>1.000.000.000</div>
+              <h6>Total Supply</h6>
+              <h6>1.000.000.000</h6>
             </div>
             <hr color="white"></hr>
             <div className="token-detail-1">
-              <div>Start time</div>
-              <div>2024.08.06 13:00 (UTC)</div>
+              <h6>Start time</h6>
+              <h6>2024.08.06 13:00 (UTC)</h6>
             </div>
             <hr color="white"></hr>
             <div className="token-detail-1">
-              <div>End time</div>
-              <div>2024.08.08 19:00 (UTC)</div>
+              <h6>End time</h6>
+              <h6>2024.08.08 19:00 (UTC)</h6>
             </div>
             <hr color="white"></hr>
             <div className="token-detail-1">
-              <div>TGE</div>
-              <div>100%</div>
+              <h6>Listing Time</h6>
+              <h6>2024.08.10 19:00 (UTC)</h6>
+            </div>
+            <hr color="white"></hr>
+            <div className="token-detail-1">
+              <h6>TGE</h6>
+              <h6>100%</h6>
             </div>
           </div>
         </div>
 
-        <div style={{ width: "500px", height: "500px" }}>
+        <div className="chart-ido" style={{ width: "500px", height: "500px" }}>
           <PieChart />
         </div>
       </div>

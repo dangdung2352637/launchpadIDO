@@ -1,21 +1,40 @@
-.dung {
+@media all and (max-width: 600px) {
+  .Nav-link {
+    .nav-link-page {
+      display: flex;
+    }
+    a {
+      color: white;
+      margin-right: 10% !important;
+      font-size: 1.2rem !important;
+    }
+
+    button {
+      border-radius: 8px;
+      padding: 1px !important;
+    }
+  }
+}
+
+.Nav-link {
   display: flex;
   margin-top: 2%;
   justify-content: space-between;
+  .nav-link-page {
+    display: flex;
+  }
 
   button {
-    // background-image: linear-gradient(
-    //   rgba(255, 255, 255, 0.07),
-    //   rgba(255, 255, 255, 0.07)
-    // );
     border-radius: 8px;
     padding: 5px;
     font-size: large;
+    border-color: transparent;
   }
   a {
     color: white;
-    margin-right: 60%;
+    margin-right: 30%;
     text-decoration: none;
+    font-size: 1.5rem;
   }
 }
 

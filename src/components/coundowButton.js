@@ -28,6 +28,7 @@ const CountdownTimer = () => {
         value: ethers.utils.parseEther(inputValue),
       });
       console.log("tx", tx);
+      setInputValue("");
     } catch (err) {
       console.log(1);
     }
@@ -72,10 +73,6 @@ const CountdownTimer = () => {
     [calculateTimeLeft]
   );
 
-  const handleButtonClick = () => {
-    console.log("Button clicked!");
-  };
-
   return (
     <div className="">
       <input
@@ -90,9 +87,7 @@ const CountdownTimer = () => {
           Nhấn vào
         </button>
       ) : (
-        <button onClick={handleButtonClick} className="start-end">
-          Buy
-        </button>
+        <button className="start-end">Buy</button>
       )}
     </div>
   );

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-export default function GetBlance() {
+export function GetBlance() {
   const { balance } = useSelector((state) => state.wallet);
   const formattedBalance = Number(balance).toFixed(3);
   return (

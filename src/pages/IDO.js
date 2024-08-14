@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import GetBlance from "../redux/getBalance";
+import { GetBlance } from "./getBalance";
 import CountdownTimer from "../components/countdow";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";

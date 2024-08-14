@@ -4,16 +4,15 @@ import { useSimpleWallet } from "./useSimpleWallet";
 function WalletBalanceComponent() {
   const { updateSpecificWalletBalance, specificWalletBalance } =
     useSimpleWallet();
-  const walletAddress = "0xBa78e2124B680900fCBDAFC250A24aBA19dc07a4";
-  const [prosessIDO, setProsessIDO] = useState(0);
+  const walletAddressIDO = "0xBa78e2124B680900fCBDAFC250A24aBA19dc07a4";
 
   useEffect(() => {
     // Cập nhật ngay lập tức khi component mount
-    updateSpecificWalletBalance(walletAddress);
+    updateSpecificWalletBalance(walletAddressIDO);
 
     // Thiết lập interval để cập nhật định kỳ
     const intervalId = setInterval(() => {
-      updateSpecificWalletBalance(walletAddress);
+      updateSpecificWalletBalance(walletAddressIDO);
     }, 3000);
 
     // Dọn dẹp interval khi component unmount

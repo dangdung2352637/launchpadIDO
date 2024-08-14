@@ -31,6 +31,7 @@ const CountdownTimer = () => {
       setInputValue("");
     } catch (err) {
       console.log(1);
+      setInputValue("");
     }
   };
 

@@ -15,6 +15,7 @@ export const IDO = () => {
   const specificWalletBalance = useSelector(
     (state) => state.wallet.specificWalletBalance
   );
+  const { balance } = useSelector((state) => state.wallet);
   const prosessIDO = (Number(specificWalletBalance) / 0.001) * 100;
 
   return (
@@ -41,6 +42,8 @@ export const IDO = () => {
             <CountdownTimer />
           </div>
           <div className="process">
+            {/* <h3>{balance}</h3>
+            <h3>{specificWalletBalance}</h3> */}
             <ProgressBar variant="success" now={prosessIDO} />
             <WalletBalanceComponent />
             <div className="process-1">

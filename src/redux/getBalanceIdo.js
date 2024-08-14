@@ -20,11 +20,6 @@ function WalletBalanceComponent() {
     return () => clearInterval(intervalId);
   }, []); // Mảng dependencies rỗng để chỉ chạy một lần khi mount
 
-  useEffect(() => {
-    // Cập nhật prosessIDO mỗi khi specificWalletBalance thay đổi
-    // setProsessIDO((Number(specificWalletBalance) / 0.001) * 100);
-  }, []);
-
   return <div></div>;
 }
 

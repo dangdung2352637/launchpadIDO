@@ -49,17 +49,21 @@ const CountdownTimer = () => {
   }
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      const newTimeLeft = calculateTimeLeft();
-      setTimeLeft(newTimeLeft);
+    const timer = setInterval(
+      () => {
+        const newTimeLeft = calculateTimeLeft();
+        setTimeLeft(newTimeLeft);
 
-      if (!newTimeLeft && !isCountdownFinished) {
-        setIsCountdownFinished(true);
-        setTargetDate(new Date().getTime() + 60 * 1000);
-      } else if (isCountdownFinished && !newTimeLeft) {
-        clearInterval(timer);
-      }
-    }, 1000);
+        if (!newTimeLeft && !isCountdownFinished) {
+          setIsCountdownFinished(true);
+          setTargetDate(new Date().getTime() + 60 * 1000);
+        } else if (isCountdownFinished && !newTimeLeft) {
+          clearInterval(timer);
+        }
+      },
+      [calculateTimeLeft],
+      1000
+    );
 
     return () => clearInterval(timer);
   }, [targetDate, isCountdownFinished]);

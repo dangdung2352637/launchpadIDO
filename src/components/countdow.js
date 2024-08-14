@@ -22,20 +22,24 @@ const CountdownTimer = () => {
   }
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      const newTimeLeft = calculateTimeLeft();
-      setTimeLeft(newTimeLeft);
+    const timer = setInterval(
+      () => {
+        const newTimeLeft = calculateTimeLeft();
+        setTimeLeft(newTimeLeft);
 
-      if (!newTimeLeft) {
-        if (!is24HourCycle) {
-          setIs24HourCycle(true);
-          setTargetDate(new Date().getTime() + 24 * 60 * 60 * 1000);
-        } else {
-          setIs24HourCycle(false);
-          setTargetDate(new Date().getTime() + 24 * 60 * 60 * 1000);
+        if (!newTimeLeft) {
+          if (!is24HourCycle) {
+            setIs24HourCycle(true);
+            setTargetDate(new Date().getTime() + 24 * 60 * 60 * 1000);
+          } else {
+            setIs24HourCycle(false);
+            setTargetDate(new Date().getTime() + 24 * 60 * 60 * 1000);
+          }
         }
-      }
-    }, 1000);
+      },
+      [calculateTimeLeft],
+      1000
+    );
 
     return () => clearInterval(timer);
   }, [targetDate, is24HourCycle]);

@@ -12,8 +12,6 @@ import WalletBalanceComponent from "../redux/getBalanceIdo";
 import CountdownTimerButton from "../components/coundowButton";
 
 export const IDO = () => {
-  const [count, setCount] = useState(0);
-
   const specificWalletBalance = useSelector(
     (state) => state.wallet.specificWalletBalance
   );

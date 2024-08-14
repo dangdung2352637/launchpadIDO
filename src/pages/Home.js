@@ -3,15 +3,7 @@ import "./Home.scss";
 import { useSimpleWallet } from "../redux/useSimpleWallet";
 
 export const Home = () => {
-  const {
-    walletAddress,
-    isConnected,
-    balance,
-    networkId,
-    connectWallet,
-    disconnectWallet,
-    checkAndSwitchNetwork,
-  } = useSimpleWallet();
+  const { walletAddress, isConnected, connectWallet } = useSimpleWallet();
 
   return (
     <div className="Nav-link">

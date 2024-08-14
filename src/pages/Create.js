@@ -5,7 +5,6 @@ export const Create = () => {
   return (
     <div className="Create">
       <div>
-        {/* <WalletBalanceComponent /> */}
         <h1 className="project-details">Project Details</h1>
         <div>Project name</div>
         <input />

@@ -1,5 +1,4 @@
 import "./About.scss";
-import Bixplorer_banner from "../image/Bixplorer_banner.png";
 import item_1 from "../image/item_1.png";
 import item_2 from "../image/item_2.png";
 import item_3 from "../image/item_3.png";

@@ -1,7 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Home.scss";
 import { useSimpleWallet } from "../redux/useSimpleWallet";
-import Create from "./Create";
 
 export const Home = () => {
   const {

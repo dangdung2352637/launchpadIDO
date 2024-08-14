@@ -10,7 +10,6 @@ import PieChart from "../components/PieChart";
 import { useSelector } from "react-redux";
 import WalletBalanceComponent from "../redux/getBalanceIdo";
 import CountdownTimerButton from "../components/coundowButton";
-// import React, { useState, useEffect } from "react";
 
 export const IDO = () => {
   const [count, setCount] = useState(0);

@@ -85,7 +85,7 @@ const CountdownTimer = () => {
 
       {isCountdownFinished && timeLeft ? (
         <button onClick={startPayment} className="start-in">
-          Nhấn vào
+          Buy
         </button>
       ) : (
         <button className="start-end">Buy</button>

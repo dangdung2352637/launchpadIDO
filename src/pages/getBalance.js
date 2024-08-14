@@ -23,7 +23,7 @@ export function GetBlance() {
 
   return (
     <div>
-      <p>Balance: {formattedBalance} BNB</p>
+      <p>Balance: {formattedBalance} ETH</p>
     </div>
   );
 }

@@ -206,8 +206,8 @@ export const About = () => {
       <div className="About-4">
         <div>
           <h3>Leopad pro</h3>
-          <div> hihi</div>
-          <div>Contact Us</div>
+          <div> Twitter</div>
+          <div>Telegram</div>
         </div>
         <div>
           <h6>DOCS</h6>

@@ -3,7 +3,7 @@ import "./coundowButton.scss";
 const { ethers } = require("ethers");
 
 const CountdownTimer = () => {
-  const initialTargetDate = new Date("August 12, 2024 00:25:00").getTime();
+  const initialTargetDate = new Date("August 15, 2024 20:00:00").getTime();
   const [targetDate, setTargetDate] = useState(initialTargetDate);
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const [isCountdownFinished, setIsCountdownFinished] = useState(false);

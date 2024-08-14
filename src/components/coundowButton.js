@@ -48,37 +48,29 @@ const CountdownTimer = () => {
     return null;
   }
 
-  useEffect(() => {
-    const timer = setInterval(
-      () => {
-        const newTimeLeft = calculateTimeLeft();
-        setTimeLeft(newTimeLeft);
+  useEffect(
+    () => {
+      const timer = setInterval(
+        () => {
+          const newTimeLeft = calculateTimeLeft();
+          setTimeLeft(newTimeLeft);
 
-        if (!newTimeLeft && !isCountdownFinished) {
-          setIsCountdownFinished(true);
-          setTargetDate(new Date().getTime() + 60 * 1000);
-        } else if (isCountdownFinished && !newTimeLeft) {
-          clearInterval(timer);
-        }
-      },
-      [calculateTimeLeft],
-      1000
-    );
+          if (!newTimeLeft && !isCountdownFinished) {
+            setIsCountdownFinished(true);
+            setTargetDate(new Date().getTime() + 60 * 1000);
+          } else if (isCountdownFinished && !newTimeLeft) {
+            clearInterval(timer);
+          }
+        },
 
-    return () => clearInterval(timer);
-  }, [targetDate, isCountdownFinished]);
+        1000
+      );
 
-  const formatTime = (time) => {
-    return time.toString().padStart(2, "0");
-  };
-
-  const getTimerDisplay = () => {
-    if (!timeLeft) return "00:00:00:00";
-    const { days, hours, minutes, seconds } = timeLeft;
-    return `${formatTime(days)}:${formatTime(hours)}:${formatTime(
-      minutes
-    )}:${formatTime(seconds)}`;
-  };
+      return () => clearInterval(timer);
+    },
+    [targetDate, isCountdownFinished],
+    [calculateTimeLeft]
+  );
 
   const handleButtonClick = () => {
     console.log("Button clicked!");

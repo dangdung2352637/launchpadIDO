@@ -86,41 +86,7 @@
       background-image: none;
       margin-top: 5%;
       margin-bottom: -5%;
-      h3 {
-        width: 100%;
-      }
-      .text-center {
-        margin-top: -18%;
-      }
-    }
-    .process {
-      background-image: none;
-      display: flex;
-      flex-direction: column;
-      margin-top: 4%;
       width: 80%;
-      .process-1 {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 2%;
-      }
-      p {
-        margin-top: 3%;
-        margin-bottom: 0%;
-        font-size: 1.2rem;
-      }
-      input {
-        border-radius: 8px;
-      }
-      .buy {
-        color: rgba(255, 255, 255, 0.3);
-      }
-      .bg-danger {
-        background-color: rgba(
-          var(--bs-danger-rgb),
-          var(--bs-bg-opacity)
-        ) !important;
-      }
     }
 
     .Sale-Type,

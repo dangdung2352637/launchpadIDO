@@ -1,23 +1,12 @@
 import React, { useState } from "react";
-import { GetBlance } from "./getBalance";
 import CountdownTimer from "../components/countdow";
-import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
 import "./IDO.scss";
 import imgsocial1 from "../image/imgsocial1.png";
 import baoidoo from "../image/baoidoo.png";
 import PieChart from "../components/PieChart";
-import { useSelector } from "react-redux";
-import WalletBalanceComponent from "../redux/getBalanceIdo";
-import CountdownTimerButton from "../components/coundowButton";
 
 export const IDO = () => {
-  const specificWalletBalance = useSelector(
-    (state) => state.wallet.specificWalletBalance
-  );
-  const { balance } = useSelector((state) => state.wallet);
-  const prosessIDO = (Number(specificWalletBalance) / 0.001) * 100;
-
   return (
     <div className="ido-one">
       <div className="ido">
@@ -36,24 +25,8 @@ export const IDO = () => {
           </h3>
         </div>
         <div className="ido-page">
-          {/* <h3>Sale Type: Private Sale</h3> */}
           <div className="time-end">
-            {/* <h3>Presale Ends In</h3> */}
             <CountdownTimer />
-          </div>
-          <div className="process">
-            {/* <h3>{balance}</h3>
-            <h3>{specificWalletBalance}</h3> */}
-            <ProgressBar variant="success" now={prosessIDO} />
-            <WalletBalanceComponent />
-            <div className="process-1">
-              <h6>0 ETH</h6>
-              <h6>10.00 ETH</h6>
-            </div>
-            <p>
-              <GetBlance />
-            </p>
-            <CountdownTimerButton />
           </div>
           <Button className="button-claim" variant="secondary">
             CLAIM

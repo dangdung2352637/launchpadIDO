@@ -12,14 +12,14 @@ const Countdown = () => {
     (state) => state.wallet.specificWalletBalance
   );
   const [inputValue, setInputValue] = useState("");
-  const prosessIDO = (Number(specificWalletBalance) / 0.001) * 100;
+  const prosessIDO = Math.round((Number(specificWalletBalance) / 0.001) * 100);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
-  const initialTargetDate = new Date("August 26, 2024 22:25:00").getTime();
-  const preCountdownTarget = initialTargetDate - 24 * 60 * 60 * 1000; // 24 giờ trước target
+  const initialTargetDate = new Date("August 16, 2024 14:55:00").getTime();
+  const preCountdownTarget = initialTargetDate - 2 * 60 * 1000; // 24 giờ trước target
   const [timeLeft, setTimeLeft] = useState({});
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
 
@@ -100,7 +100,7 @@ const Countdown = () => {
         <div>{timeLeft.minutes}m :</div>
         <div>{timeLeft.seconds}s</div>
       </div>
-      <ProgressBar variant="success" now={prosessIDO} />
+      <ProgressBar now={prosessIDO} label={`${prosessIDO}%`} />
       <WalletBalanceComponent />
       <div className="process-1">
         <h6>0 ETH</h6>

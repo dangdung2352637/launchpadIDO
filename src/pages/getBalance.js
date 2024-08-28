@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 export function GetBlance() {
   const { getBalance } = useSimpleWallet();
   const { balance, walletAddress } = useSelector((state) => state.wallet);
-  const formattedBalance = Number(balance).toFixed(3);
+  const formattedBalance = Number(balance).toFixed(4);
   console.log("abc", walletAddress);
 
   useEffect(() => {

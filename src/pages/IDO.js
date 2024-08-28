@@ -28,9 +28,7 @@ export const IDO = () => {
           <div className="time-end">
             <CountdownTimer />
           </div>
-          <Button className="button-claim" variant="secondary">
-            CLAIM
-          </Button>
+          <h6 className="your-nep">YOUR NEP :</h6>
           <div className="Sale-Type">
             <h6>Sale Type</h6>
             <h6>Public</h6>

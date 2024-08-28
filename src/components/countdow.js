@@ -11,6 +11,7 @@ const Countdown = () => {
   const specificWalletBalance = useSelector(
     (state) => state.wallet.specificWalletBalance
   );
+
   const [inputValue, setInputValue] = useState("");
   const prosessIDO = Math.round((Number(specificWalletBalance) / 0.001) * 100);
 
@@ -18,8 +19,8 @@ const Countdown = () => {
     setInputValue(event.target.value);
   };
 
-  const initialTargetDate = new Date("August 16, 2024 14:55:00").getTime();
-  const preCountdownTarget = initialTargetDate - 2 * 60 * 1000; // 24 giờ trước target
+  const initialTargetDate = new Date("August 28, 2024 18:01:00").getTime();
+  const preCountdownTarget = initialTargetDate - 30 * 60 * 1000; // 24 giờ trước target
   const [timeLeft, setTimeLeft] = useState({});
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
 
@@ -56,14 +57,14 @@ const Countdown = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const handleButtonClick = () => {
-    // Xử lý khi nút được nhấn
-    alert("helllo");
+  const start = () => {
+    const floatValue = Number(inputValue);
+    if (floatValue > 0.0009) {
+      startPayment();
+    } else {
+      setInputValue("0");
+    }
   };
-
-  // if (Object.keys(timeLeft).length === 0) {
-  //   return <div>Đã đến thời gian target!</div>;
-  // }
 
   const startPayment = async () => {
     const floatValue = Number(inputValue);
@@ -80,10 +81,10 @@ const Countdown = () => {
         value: ethers.utils.parseEther(inputValue),
       });
       console.log("tx", tx);
-      setInputValue("");
+      setInputValue("0");
     } catch (err) {
       console.log(1);
-      setInputValue("");
+      setInputValue("0");
     }
   };
 
@@ -91,8 +92,8 @@ const Countdown = () => {
     <div className="ido-time">
       <h2>
         {timeLeft.targetDate === preCountdownTarget
-          ? "Sale Starts in:"
-          : "Presale Ends In:"}
+          ? "Sale Starts in :"
+          : "Presale Ends In :"}
       </h2>
       <div className="count-time">
         <div>{timeLeft.days} :</div>
@@ -103,7 +104,7 @@ const Countdown = () => {
       <ProgressBar now={prosessIDO} label={`${prosessIDO}%`} />
       <WalletBalanceComponent />
       <div className="process-1">
-        <h6>0 ETH</h6>
+        <h6>0 ETH (Min 0.01)</h6>
         <h6>10.00 ETH</h6>
       </div>
 
@@ -118,7 +119,7 @@ const Countdown = () => {
         />
       </div>
       {isButtonEnabled ? (
-        <button onClick={startPayment} className="start-in">
+        <button onClick={start} className="start-in">
           BUY
         </button>
       ) : (

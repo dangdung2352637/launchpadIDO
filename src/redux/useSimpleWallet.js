@@ -22,7 +22,7 @@ export function useSimpleWallet() {
 
   const web3 = useMemo(() => new Web3(window.ethereum), []);
 
-  const BSC_NETWORK_ID = 56; // Mainnet
+  const BSC_NETWORK_ID = 324; // Mainnet
   const BSC_TESTNET_ID = 97; // Testnet
 
   const checkAndSwitchNetwork = useCallback(async () => {

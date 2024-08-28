@@ -99,10 +99,7 @@
       width: 80%;
     }
     // justify-content: space-between;
-    h3 {
-      margin-top: 2%;
-      background-image: none;
-    }
+
     button {
       margin-top: 5%;
     }
@@ -114,12 +111,8 @@
       border: 1px solid none;
       font-size: large;
     }
-    .button-claim {
-      color: rgba(255, 255, 255, 0.3);
-      border-radius: 8px;
-      padding: 5px;
-      border: 1px;
-      font-size: large;
+    .your-nep {
+      margin-top: 8%;
     }
   }
 }

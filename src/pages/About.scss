@@ -125,10 +125,11 @@
       .About-1-button {
         button {
           margin-top: 3%;
-          border-radius: 8px;
-          background-color: rgb(70, 78, 49);
+          border-radius: 15px;
+          background-color: rgb(255, 165, 0);
           color: white;
           margin-right: 8%;
+          padding: 1%;
         }
       }
     }
@@ -190,6 +191,9 @@
         .About-2B-Vesting {
           display: flex;
           justify-content: space-between !important;
+          div {
+            font-size: 1.2rem;
+          }
         }
       }
     }
@@ -234,15 +238,24 @@
     height: 260px;
     div {
       width: 10%;
+      a {
+        text-decoration: none;
+        font-size: large;
+        color: white;
+      }
       div {
         font-size: 18px;
         margin-top: 2%;
       }
-      h3 {
+      h3,
+      h4 {
         color: #86868b;
       }
       h6 {
         color: #86868b;
+      }
+      h5 {
+        margin-top: 13%;
       }
     }
   }

@@ -5,6 +5,7 @@ import "./IDO.scss";
 import imgsocial1 from "../image/imgsocial1.png";
 import baoidoo from "../image/baoidoo.png";
 import PieChart from "../components/PieChart";
+import tenlua from "../image/tenlua.webp";
 
 export const IDO = () => {
   return (
@@ -13,8 +14,14 @@ export const IDO = () => {
         <div className="ido-detal">
           <img src={baoidoo}></img>
           <div className="ido-img">
-            <img className="crx" src={imgsocial1}></img>
-            <h2>NEP</h2>
+            {/* <img className="crx" src={imgsocial1}></img> */}
+            <img className="crx" src={tenlua}></img>
+            <marquee className="NEP" width="100%">
+              LEOPAD $NEP - LEOPAD $NEP - LEOPAD $NEP - LEOPAD $NEP - LEOPAD
+              $NEP -LEOPAD $NEP - LEOPAD $NEP - LEOPAD $NEP - LEOPAD $NEP -
+              LEOPAD $NEP -LEOPAD $NEP - LEOPAD $NEP - LEOPAD $NEP - LEOPAD $NEP
+              - LEOPAD $NEP -
+            </marquee>
           </div>
           <h3 className="text">
             Leopad is a multichain venture DAO and IDO launchpad with the
@@ -66,6 +73,16 @@ export const IDO = () => {
             </div>
             <hr color="white"></hr>
             <div className="token-detail-1">
+              <h6>TGE</h6>
+              <h6>100%</h6>
+            </div>
+            <hr color="white"></hr>
+            <div className="token-detail-1">
+              <h6>Listing </h6>
+              <h6>SyncSwap</h6>
+            </div>
+            <hr color="white"></hr>
+            <div className="token-detail-1">
               <h6>Total Supply</h6>
               <h6>1.000.000.000</h6>
             </div>
@@ -83,11 +100,6 @@ export const IDO = () => {
             <div className="token-detail-1">
               <h6>Listing Time</h6>
               <h6>2024.08.10 19:00 (UTC)</h6>
-            </div>
-            <hr color="white"></hr>
-            <div className="token-detail-1">
-              <h6>TGE</h6>
-              <h6>100%</h6>
             </div>
           </div>
         </div>

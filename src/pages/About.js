@@ -204,9 +204,14 @@ export const About = () => {
 
       <div className="About-4">
         <div>
-          <h3>Leopad pro</h3>
-          <div> Twitter</div>
-          <div>Telegram</div>
+          <h4>Leopad pro</h4>
+          <a target="_blank" href="https://x.com/leopadcoinmoon">
+            Twitter
+          </a>
+          <br></br>
+          <a target="_blank" href="https://t.me/leopadmoon">
+            Telegram
+          </a>
         </div>
         <div>
           <h6>DOCS</h6>
@@ -227,7 +232,7 @@ export const About = () => {
         </div>
       </div>
       <hr color="white"></hr>
-      <h6>Copyright © 2023 . All rights reserved.</h6>
+      <h6>Copyright © 2024 . All rights reserved.</h6>
     </div>
   );
 };
